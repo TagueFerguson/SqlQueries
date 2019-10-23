@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - include:
+      file: changelogs/tables/CreateTables.sql
+      relativeToChangelogFile: true
+  - include:
+      file: changelogs/tables/CreateForeignKeys.sql
+      relativeToChangelogFile: true
+  - include:
+      file: changelogs/storedprocedures/Artist_GetByPlaceOfOriginId.sql
+      relativeToChangelogFile: true
+  - include:
+      file: changelogs/data/SeedData.sql
+      relativeToChangelogFile: true

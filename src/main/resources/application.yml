@@ -1,0 +1,31 @@
+server:
+  port: 8089
+
+spring:
+  application:
+    name: sql-queries
+  liquibase:
+    change-log: classpath:db/changelog-master.yml
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:${mariaDB4j.port}/test
+    username: root
+    password:
+
+mariaDB4j:
+  port: 3337
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+    tags:
+      application: sql-queries
